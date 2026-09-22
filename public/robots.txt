@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Aggiorna il dominio prima della pubblicazione
+# Sitemap: https://www.danzi1975.it/sitemap.xml
