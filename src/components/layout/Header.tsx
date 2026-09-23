@@ -18,12 +18,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-[1000] border-b border-black/5 bg-white/95 backdrop-blur">
       <Container className="flex min-h-20 items-center justify-between gap-8">
-        <img
-          src="/logo_full.png"
-          alt="D'Anzi Hospitality Hub"
-          className="h-16 w-auto"
-        />
-
+        <Link to="/" className="flex items-center gap-2 border-none">
+          <img
+            src="/logo_full.png"
+            alt="D'Anzi Hospitality Hub"
+            className="h-16 w-auto"
+          />
+        </Link>
         <nav
           className="hidden items-center gap-7 lg:flex"
           aria-label="Navigazione principale"
