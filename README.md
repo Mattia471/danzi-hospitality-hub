@@ -115,3 +115,13 @@ VITE_CONTACT_FORM_ENDPOINT=https://formspree.io/f/xxxxxxxx
 Il form invia nome, struttura/azienda, email, telefono, argomento e messaggio. Include inoltre consenso privacy obbligatorio, feedback di invio e un campo honeypot anti-spam.
 
 > Prima della pubblicazione va collegata la pagina/privacy policy definitiva e va configurato il provider email con l’indirizzo destinatario aziendale.
+
+## Hero carousel update
+
+La home usa ora un hero fotografico con carosello automatico di tre immagini estratte dal materiale Hotel The Steps:
+
+- `/public/images/hero/hotel-steps-reception.jpg`
+- `/public/images/hero/hotel-steps-bedroom.jpg`
+- `/public/images/hero/hotel-steps-bathroom.jpg`
+
+Il carosello ruota automaticamente ogni 5.2 secondi, si mette in pausa al passaggio del mouse e include frecce, indicatori e label della slide. Il componente aggiornato è `src/components/home/Hero.tsx`.
