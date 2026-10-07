@@ -1,7 +1,6 @@
-import { Container } from '../components/ui/Container';
-import { SectionHeading } from '../components/ui/SectionHeading';
-import { projects } from '../data/projects';
-import { PageSeo } from '../components/ui/PageSeo';
+import { Container } from "../components/ui/Container";
+import { projects } from "../data/projects";
+import { PageSeo } from "../components/ui/PageSeo";
 
 export function ProjectsPage() {
   return (
@@ -21,8 +20,9 @@ export function ProjectsPage() {
             Progetti, ambienti, dettagli che diventano esperienza.
           </h1>
           <p className="mt-7 max-w-2xl text-base leading-7 text-white/60">
-            Una selezione di progetti reali per raccontare il nostro approccio attraverso
-            camere, spazi comuni, ristorazione, wellness, materiali e soluzioni su misura.
+            Una selezione di progetti reali per raccontare il nostro approccio
+            attraverso camere, spazi comuni, ristorazione, wellness, materiali e
+            soluzioni su misura.
           </p>
         </Container>
       </section>
@@ -36,7 +36,7 @@ export function ProjectsPage() {
                 href={`#${project.id}`}
                 className="whitespace-nowrap border border-black/10 px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.13em] text-brand-muted transition hover:border-brand-orange hover:text-brand-orange"
               >
-                {String(index + 1).padStart(2, '0')} · {project.title}
+                {String(index + 1).padStart(2, "0")} · {project.title}
               </a>
             ))}
           </div>
@@ -54,7 +54,8 @@ export function ProjectsPage() {
               <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
                 <div className="lg:col-span-4 lg:sticky lg:top-28">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-brand-orange">
-                    {String(index + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
+                    {String(index + 1).padStart(2, "0")} /{" "}
+                    {String(projects.length).padStart(2, "0")}
                   </p>
                   <p className="mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-brand-muted">
                     {project.category}
@@ -74,7 +75,7 @@ export function ProjectsPage() {
                       src={project.gallery[0]}
                       alt={`${project.title}, vista principale`}
                       className="absolute inset-0 h-full w-full object-cover"
-                      loading={index === 0 ? 'eager' : 'lazy'}
+                      loading={index === 0 ? "eager" : "lazy"}
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-6 pt-20 text-white">
                       <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/65">
@@ -88,7 +89,7 @@ export function ProjectsPage() {
                       <div
                         key={image}
                         className={`relative overflow-hidden bg-brand-stone ${
-                          imageIndex === 0 ? 'min-h-[300px]' : 'min-h-[260px]'
+                          imageIndex === 0 ? "min-h-[300px]" : "min-h-[260px]"
                         }`}
                       >
                         <img
