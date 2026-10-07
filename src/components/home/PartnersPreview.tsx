@@ -1,8 +1,8 @@
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { partners } from '../../data/partners';
-import { Container } from '../ui/Container';
-import { SectionHeading } from '../ui/SectionHeading';
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { partners } from "../../data/partners";
+import { Container } from "../ui/Container";
+import { SectionHeading } from "../ui/SectionHeading";
 
 const categories = Array.from(
   new Set(partners.map((partner) => partner.category).filter(Boolean)),
@@ -11,7 +11,8 @@ const categories = Array.from(
 const featuredPartners = partners
   .filter(
     (partner, index, allPartners) =>
-      allPartners.findIndex((item) => item.category === partner.category) === index,
+      allPartners.findIndex((item) => item.category === partner.category) ===
+      index,
   )
   .slice(0, 6);
 
@@ -69,7 +70,7 @@ export function PartnersPreview() {
             </Link>
           </div>
 
-          <div className="relative overflow-hidden bg-brand-ink p-4 sm:p-6 lg:p-8">
+          {/* <div className="relative overflow-hidden bg-brand-ink p-4 sm:p-6 lg:p-8">
             <div
               aria-hidden="true"
               className="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-brand-orange/15 blur-3xl"
@@ -176,7 +177,7 @@ export function PartnersPreview() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </Container>
     </section>
