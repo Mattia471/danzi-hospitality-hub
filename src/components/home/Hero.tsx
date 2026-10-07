@@ -6,21 +6,39 @@ import { Container } from '../ui/Container';
 
 const heroSlides = [
   {
-    src: '/images/hero/hotel-steps-reception.jpg',
-    alt: 'Reception di hotel con bancone su misura, dettagli in ottone e illuminazione decorativa',
-    label: 'Reception & contract',
+    src: '/images/projects/hotel-the-steps/steps-reception.jpg',
+    alt: 'Reception Hotel The Steps con bancone su misura e illuminazione decorativa',
+    label: 'Hotel The Steps · Interior & Contract',
     position: 'center',
   },
   {
-    src: '/images/hero/hotel-steps-bedroom.jpg',
-    alt: 'Camera d’hotel contemporanea con boiserie, illuminazione integrata e arredi su misura',
-    label: 'Rooms & interior',
+    src: '/images/projects/axy/axy-lobby.webp',
+    alt: 'Axy Hotels InnStyle, lounge e spazi comuni di interior design',
+    label: 'Axy Hotels InnStyle · Hotel Interior',
     position: 'center',
   },
   {
-    src: '/images/hero/hotel-steps-bathroom.jpg',
-    alt: 'Bagno d’hotel con superfici in pietra, lavabo da appoggio e dettagli di interior design',
-    label: 'Bathrooms & materials',
+    src: '/images/projects/residenza-piranesi/piranesi-lounge.webp',
+    alt: 'Residenza Piranesi, camera e area lounge dal design contemporaneo',
+    label: 'Residenza Piranesi · Rooms & Hospitality',
+    position: 'center',
+  },
+  {
+    src: '/images/projects/adesso/adesso-bar.webp',
+    alt: 'ADESSO, area bar e ristorazione con illuminazione scenografica',
+    label: 'ADESSO · Food & Beverage',
+    position: 'center',
+  },
+  {
+    src: '/images/projects/hotel-independent/independent-room.webp',
+    alt: 'Hotel Independent, camera con palette blu e bordeaux',
+    label: 'Hotel Independent · Interior',
+    position: 'center',
+  },
+  {
+    src: '/images/projects/eitch/eitch-wellness.webp',
+    alt: 'EITCH, bagno wellness in pietra con vasca e illuminazione integrata',
+    label: 'EITCH · Suite & Wellness',
     position: 'center',
   },
 ] as const;
@@ -53,7 +71,7 @@ export function Hero() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       aria-roledescription="carousel"
-      aria-label="Progetti hospitality e interior design"
+      aria-label="Realizzazioni hospitality e interior design"
     >
       <div className="absolute inset-0">
         {heroSlides.map((slide, index) => (
@@ -78,14 +96,16 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,29,33,0.90)_0%,rgba(23,29,33,0.74)_38%,rgba(23,29,33,0.28)_70%,rgba(23,29,33,0.18)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.14)_0%,transparent_45%,rgba(0,0,0,0.58)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,29,33,0.92)_0%,rgba(23,29,33,0.75)_38%,rgba(23,29,33,0.28)_70%,rgba(23,29,33,0.16)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.14)_0%,transparent_45%,rgba(0,0,0,0.62)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_34%,rgba(255,90,0,0.13),transparent_25%)]" />
 
       <Container className="relative z-10 grid min-h-[76vh] items-center gap-10 py-20 lg:min-h-[82vh] lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
         <div className="max-w-4xl">
           <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-            <p className="text-xs uppercase tracking-[0.26em] text-white/70">D’Anzi Hospitality Hub</p>
+            <p className="text-xs uppercase tracking-[0.26em] text-white/70">
+              D’Anzi Hospitality Hub
+            </p>
             <span className="hidden h-px w-10 bg-brand-orange sm:block" />
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-orange sm:text-xs">
               Interior · Contract · Hospitality
@@ -97,7 +117,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-7 max-w-2xl text-base leading-7 text-white/78 sm:text-lg sm:leading-8">
-            Prodotti, servizi e consulenza per trasformare gli spazi dell’ospitalità in esperienze riconoscibili, funzionali e su misura.
+            Prodotti, servizi e consulenza per trasformare gli spazi dell’ospitalità in
+            esperienze riconoscibili, funzionali e su misura.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -127,7 +148,9 @@ export function Hero() {
       <div className="absolute inset-x-0 bottom-0 z-20 border-t border-white/15 bg-black/15 backdrop-blur-[2px]">
         <Container className="flex min-h-20 items-center justify-between gap-5 py-4">
           <div className="min-w-0">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/45">In evidenza</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/45">
+              Realizzazione in evidenza
+            </p>
             <p className="mt-1 truncate text-xs font-semibold uppercase tracking-[0.16em] text-white/90 sm:text-sm">
               {heroSlides[activeSlide].label}
             </p>
@@ -141,7 +164,9 @@ export function Hero() {
                   type="button"
                   onClick={() => setActiveSlide(index)}
                   className={`h-[3px] transition-all duration-300 ${
-                    index === activeSlide ? 'w-10 bg-brand-orange' : 'w-5 bg-white/35 hover:bg-white/70'
+                    index === activeSlide
+                      ? 'w-10 bg-brand-orange'
+                      : 'w-5 bg-white/35 hover:bg-white/70'
                   }`}
                   aria-label={`Vai alla slide ${index + 1}`}
                   aria-current={index === activeSlide ? 'true' : undefined}
@@ -151,7 +176,8 @@ export function Hero() {
 
             <div className="flex items-center gap-2 border-l border-white/20 pl-4 sm:pl-6">
               <span className="mr-1 text-[10px] font-semibold tracking-[0.18em] text-white/55">
-                {String(activeSlide + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
+                {String(activeSlide + 1).padStart(2, '0')} /{' '}
+                {String(heroSlides.length).padStart(2, '0')}
               </span>
               <button
                 type="button"

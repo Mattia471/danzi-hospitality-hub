@@ -1,141 +1,88 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { projects } from "../../data/projects";
-import { Container } from "../ui/Container";
-import { SectionHeading } from "../ui/SectionHeading";
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { projects } from '../../data/projects';
+import { Container } from '../ui/Container';
+import { SectionHeading } from '../ui/SectionHeading';
+
+const cardSpan = [
+  'md:col-span-7 md:row-span-2',
+  'md:col-span-5',
+  'md:col-span-5',
+  'md:col-span-4',
+  'md:col-span-4',
+  'md:col-span-4',
+];
 
 export function ProjectsPreview() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="border-y border-black/5 bg-white py-20 lg:py-28">
       <Container>
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <SectionHeading
-            eyebrow="Realizzazioni"
-            title="Spazi che ispirano."
-            description="Una selezione di progetti da sostituire con fotografie e schede reali delle realizzazioni D’Anzi."
-          />
-          <Link
-            to="/realizzazioni"
-            className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-brand-orange"
-          >
-            Vai alle realizzazioni <ArrowRight size={16} />
-          </Link>
-        </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {projects.map((project, index) => (
-            <article
-              key={project.id}
-              className="
-                group
-                relative
-                min-h-[380px]
-                overflow-hidden
-                bg-brand-stone
-              "
+        <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+          <div>
+            <SectionHeading
+              eyebrow="Realizzazioni"
+              title="Spazi che raccontano un’identità."
+              description="Hotel, residenze, suite, aree wellness e food & beverage: una selezione di ambienti reali in cui materiali, arredi, luce e dettagli lavorano insieme."
+            />
+            <Link
+              to="/realizzazioni"
+              className="group mt-8 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-brand-orange"
             >
-              {/* IMAGE */}
-              {project.image && (
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  className="
-                    absolute
-                    inset-0
-                    h-full
-                    w-full
-                    object-cover
-                    transition-transform
-                    duration-700
-                    ease-out
-                    group-hover:scale-105
-                  "
-                />
-              )}
-
-              {/* OVERLAY */}
-              <div
-                className="
-                  absolute
-                  inset-0
-                  bg-gradient-to-t
-                  from-black/80
-                  via-black/20
-                  to-black/5
-                  transition-all
-                  duration-500
-                  group-hover:from-black/90
-                "
+              Esplora tutte le realizzazioni
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
               />
+            </Link>
+          </div>
 
-              {/* NUMBER */}
-              <span
-                className="
-                  absolute
-                  left-6
-                  top-6
-                  z-10
-                  text-xs
-                  font-medium
-                  uppercase
-                  tracking-[0.18em]
-                  text-white/80
-                "
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
+          <div className="flex items-end justify-between gap-5 border-l border-black/10 pl-6 lg:pl-8">
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-brand-muted">
+                Portfolio
+              </p>
+              <p className="mt-2 text-4xl font-medium tracking-[-0.04em] text-brand-ink">
+                {String(projects.length).padStart(2, '0')}
+              </p>
+            </div>
+            <p className="hidden max-w-sm text-right text-sm leading-6 text-brand-muted md:block">
+              Una gallery costruita su progetti e fotografie reali, per raccontare subito
+              il mondo interior e hospitality.
+            </p>
+          </div>
+        </div>
 
-              {/* CONTENT */}
-              <div className="absolute inset-x-6 bottom-6 z-10">
-                <p
-                  className="
-                    text-xs
-                    font-semibold
-                    uppercase
-                    tracking-[0.16em]
-                    text-brand-orange
-                  "
-                >
-                  {project.category}
-                </p>
-
-                <h3
-                  className="
-                    mt-2
-                    text-2xl
-                    font-medium
-                    tracking-[-0.02em]
-                    text-white
-                  "
-                >
-                  {project.title}
-                </h3>
-
-                {(project.location || project.year) && (
-                  <div className="mt-2 flex items-center gap-2 text-xs text-white/70">
-                    {project.location && <span>{project.location}</span>}
-
-                    {project.location && project.year && (
-                      <span className="text-brand-orange">•</span>
-                    )}
-
-                    {project.year && <span>{project.year}</span>}
-                  </div>
-                )}
-
-                <div
-                  className="
-                    mt-5
-                    h-px
-                    w-8
-                    bg-brand-orange
-                    transition-all
-                    duration-500
-                    group-hover:w-16
-                  "
+        <div className="mt-10 grid auto-rows-[260px] gap-4 md:grid-cols-12 lg:auto-rows-[300px]">
+          {projects.map((project, index) => (
+            <Link
+              key={project.id}
+              to={`/realizzazioni#${project.id}`}
+              className={`group relative overflow-hidden bg-brand-stone ${
+                cardSpan[index] ?? 'md:col-span-4'
+              }`}
+            >
+              <img
+                src={project.image}
+                alt={`${project.title} · ${project.category}`}
+                className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.04]"
+                loading={index < 2 ? 'eager' : 'lazy'}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/5" />
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-white sm:p-6">
+                <div>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-brand-orange">
+                    {String(index + 1).padStart(2, '0')} · {project.category}
+                  </p>
+                  <h3 className="mt-2 text-xl font-medium tracking-[-0.03em] sm:text-2xl">
+                    {project.title}
+                  </h3>
+                </div>
+                <ArrowRight
+                  size={18}
+                  className="shrink-0 transition-transform duration-300 group-hover:translate-x-1"
                 />
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </Container>

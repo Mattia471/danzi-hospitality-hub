@@ -1,150 +1,111 @@
-import { Container } from "../components/ui/Container";
-import { SectionHeading } from "../components/ui/SectionHeading";
-import { projects } from "../data/projects";
-import { PageSeo } from "../components/ui/PageSeo";
+import { Container } from '../components/ui/Container';
+import { SectionHeading } from '../components/ui/SectionHeading';
+import { projects } from '../data/projects';
+import { PageSeo } from '../components/ui/PageSeo';
 
 export function ProjectsPage() {
   return (
     <>
       <PageSeo
         title="Realizzazioni | D'Anzi Hospitality Hub"
-        description="Una selezione di realizzazioni e progetti D'Anzi Hospitality Hub."
+        description="Hotel, residenze, suite, wellness e food & beverage: scopri una selezione di realizzazioni D'Anzi Hospitality Hub."
       />
 
-      {/* HERO */}
-      <section className="border-b border-black/5 bg-white py-16 lg:py-24">
-        <Container>
-          <SectionHeading
-            eyebrow="Realizzazioni"
-            title="Progetti, ambienti, dettagli."
-            description="Una selezione di spazi, ambienti e progetti realizzati nel mondo dell'hospitality."
-          />
+      <section className="relative overflow-hidden bg-brand-ink py-20 text-white lg:py-28">
+        <div className="absolute right-0 top-0 h-full w-1/3 bg-brand-orange/[0.06]" />
+        <Container className="relative">
+          <p className="text-xs uppercase tracking-[0.24em] text-brand-orange">
+            Realizzazioni
+          </p>
+          <h1 className="mt-5 max-w-5xl text-5xl font-medium leading-[0.98] tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+            Progetti, ambienti, dettagli che diventano esperienza.
+          </h1>
+          <p className="mt-7 max-w-2xl text-base leading-7 text-white/60">
+            Una selezione di progetti reali per raccontare il nostro approccio attraverso
+            camere, spazi comuni, ristorazione, wellness, materiali e soluzioni su misura.
+          </p>
         </Container>
       </section>
 
-      {/* PROJECTS GRID */}
-      <section className="bg-white py-12 lg:py-20">
-        <Container className="grid gap-6 md:grid-cols-2">
-          {projects.map((project, index) => (
-            <article
-              key={project.id}
-              className="group relative min-h-[460px] overflow-hidden bg-brand-stone"
-            >
-              {/* IMAGE */}
-              {project.image && (
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  className="
-                    absolute inset-0
-                    h-full w-full
-                    object-cover
-                    transition-transform
-                    duration-700
-                    ease-out
-                    group-hover:scale-105
-                  "
-                />
-              )}
-
-              {/* DARK OVERLAY */}
-              <div
-                className="
-                  absolute inset-0
-                  bg-gradient-to-t
-                  from-black/75
-                  via-black/15
-                  to-black/5
-                  transition-colors
-                  duration-500
-                  group-hover:from-black/85
-                "
-              />
-
-              {/* NUMBER */}
-              <span
-                className="
-                  absolute left-6 top-6
-                  z-10
-                  text-xs
-                  font-medium
-                  uppercase
-                  tracking-[0.2em]
-                  text-white/80
-                "
+      <section className="bg-white py-10 lg:py-14">
+        <Container>
+          <div className="flex gap-2 overflow-x-auto pb-2">
+            {projects.map((project, index) => (
+              <a
+                key={project.id}
+                href={`#${project.id}`}
+                className="whitespace-nowrap border border-black/10 px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.13em] text-brand-muted transition hover:border-brand-orange hover:text-brand-orange"
               >
-                {String(index + 1).padStart(2, "0")}
-              </span>
+                {String(index + 1).padStart(2, '0')} · {project.title}
+              </a>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-              {/* CONTENT */}
-              <div
-                className="
-                  absolute inset-x-0 bottom-0
-                  z-10
-                  p-6
-                  text-white
-                  lg:p-8
-                "
-              >
-                <p
-                  className="
-                    text-xs
-                    font-medium
-                    uppercase
-                    tracking-[0.18em]
-                    text-brand-orange
-                  "
-                >
-                  {project.category}
-                </p>
-
-                <h2
-                  className="
-                    mt-2
-                    text-3xl
-                    font-medium
-                    tracking-[-0.03em]
-                    lg:text-4xl
-                  "
-                >
-                  {project.title}
-                </h2>
-
-                {(project.location || project.year) && (
-                  <div className="mt-3 flex items-center gap-2 text-sm text-white/75">
-                    {project.location && <span>{project.location}</span>}
-
-                    {project.location && project.year && (
-                      <span className="text-brand-orange">•</span>
-                    )}
-
-                    {project.year && <span>{project.year}</span>}
-                  </div>
-                )}
-
-                {project.description && (
-                  <p className="mt-4 max-w-lg text-sm leading-6 text-white/80">
+      <div className="bg-brand-canvas">
+        {projects.map((project, index) => (
+          <section
+            key={project.id}
+            id={project.id}
+            className="scroll-mt-24 border-t border-black/5 py-16 lg:py-24"
+          >
+            <Container>
+              <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+                <div className="lg:col-span-4 lg:sticky lg:top-28">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-brand-orange">
+                    {String(index + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
+                  </p>
+                  <p className="mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-brand-muted">
+                    {project.category}
+                  </p>
+                  <h2 className="mt-3 text-4xl font-medium leading-none tracking-[-0.045em] text-brand-ink sm:text-5xl">
+                    {project.title}
+                  </h2>
+                  <p className="mt-6 max-w-md text-sm leading-7 text-brand-muted">
                     {project.description}
                   </p>
-                )}
+                  <div className="mt-8 h-px w-16 bg-brand-orange" />
+                </div>
 
-                <div
-                  className="
-                    mt-6
-                    h-px
-                    w-10
-                    bg-brand-orange
-                    transition-all
-                    duration-500
-                    group-hover:w-20
-                  "
-                />
+                <div className="lg:col-span-8">
+                  <div className="relative min-h-[420px] overflow-hidden bg-brand-stone sm:min-h-[520px]">
+                    <img
+                      src={project.gallery[0]}
+                      alt={`${project.title}, vista principale`}
+                      className="absolute inset-0 h-full w-full object-cover"
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-6 pt-20 text-white">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/65">
+                        {project.title}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                    {project.gallery.slice(1, 4).map((image, imageIndex) => (
+                      <div
+                        key={image}
+                        className={`relative overflow-hidden bg-brand-stone ${
+                          imageIndex === 0 ? 'min-h-[300px]' : 'min-h-[260px]'
+                        }`}
+                      >
+                        <img
+                          src={image}
+                          alt={`${project.title}, dettaglio ${imageIndex + 2}`}
+                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.035]"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </article>
-          ))}
-        </Container>
-      </section>
+            </Container>
+          </section>
+        ))}
+      </div>
     </>
   );
 }
