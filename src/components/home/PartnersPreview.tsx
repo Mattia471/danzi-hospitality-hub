@@ -8,13 +8,13 @@ const categories = Array.from(
   new Set(partners.map((partner) => partner.category).filter(Boolean)),
 );
 
-const featuredPartners = partners
-  .filter(
-    (partner, index, allPartners) =>
-      allPartners.findIndex((item) => item.category === partner.category) ===
-      index,
-  )
-  .slice(0, 6);
+// const featuredPartners = partners
+//   .filter(
+//     (partner, index, allPartners) =>
+//       allPartners.findIndex((item) => item.category === partner.category) ===
+//       index,
+//   )
+//   .slice(0, 6);
 
 export function PartnersPreview() {
   return (
