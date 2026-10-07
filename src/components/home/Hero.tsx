@@ -1,45 +1,39 @@
-import { useEffect, useState } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { BrandComma } from '../ui/BrandComma';
-import { Container } from '../ui/Container';
+import { useEffect, useState } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { BrandComma } from "../ui/BrandComma";
+import { Container } from "../ui/Container";
 
 const heroSlides = [
   {
-    src: '/images/projects/hotel-the-steps/steps-reception.jpg',
-    alt: 'Reception Hotel The Steps con bancone su misura e illuminazione decorativa',
-    label: 'Hotel The Steps · Interior & Contract',
-    position: 'center',
+    src: "/images/projects/axy/axy-lobby.webp",
+    alt: "Axy Hotels InnStyle, lounge e spazi comuni di interior design",
+    label: "Axy Hotels InnStyle · Hotel Interior",
+    position: "center",
   },
   {
-    src: '/images/projects/axy/axy-lobby.webp',
-    alt: 'Axy Hotels InnStyle, lounge e spazi comuni di interior design',
-    label: 'Axy Hotels InnStyle · Hotel Interior',
-    position: 'center',
+    src: "/images/projects/residenza-piranesi/piranesi-lounge.webp",
+    alt: "Residenza Piranesi, camera e area lounge dal design contemporaneo",
+    label: "Residenza Piranesi · Rooms & Hospitality",
+    position: "center",
   },
   {
-    src: '/images/projects/residenza-piranesi/piranesi-lounge.webp',
-    alt: 'Residenza Piranesi, camera e area lounge dal design contemporaneo',
-    label: 'Residenza Piranesi · Rooms & Hospitality',
-    position: 'center',
+    src: "/images/projects/adesso/adesso-bar.webp",
+    alt: "ADESSO, area bar e ristorazione con illuminazione scenografica",
+    label: "ADESSO · Food & Beverage",
+    position: "center",
   },
   {
-    src: '/images/projects/adesso/adesso-bar.webp',
-    alt: 'ADESSO, area bar e ristorazione con illuminazione scenografica',
-    label: 'ADESSO · Food & Beverage',
-    position: 'center',
+    src: "/images/projects/hotel-independent/independent-room.webp",
+    alt: "Hotel Independent, camera con palette blu e bordeaux",
+    label: "Hotel Independent · Interior",
+    position: "center",
   },
   {
-    src: '/images/projects/hotel-independent/independent-room.webp',
-    alt: 'Hotel Independent, camera con palette blu e bordeaux',
-    label: 'Hotel Independent · Interior',
-    position: 'center',
-  },
-  {
-    src: '/images/projects/eitch/eitch-wellness.webp',
-    alt: 'EITCH, bagno wellness in pietra con vasca e illuminazione integrata',
-    label: 'EITCH · Suite & Wellness',
-    position: 'center',
+    src: "/images/projects/eitch/eitch-wellness.webp",
+    alt: "EITCH, bagno wellness in pietra con vasca e illuminazione integrata",
+    label: "EITCH · Suite & Wellness",
+    position: "center",
   },
 ] as const;
 
@@ -58,7 +52,9 @@ export function Hero() {
   }, [isPaused]);
 
   const previousSlide = () => {
-    setActiveSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length);
+    setActiveSlide(
+      (current) => (current - 1 + heroSlides.length) % heroSlides.length,
+    );
   };
 
   const nextSlide = () => {
@@ -78,19 +74,21 @@ export function Hero() {
           <div
             key={slide.src}
             className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
-              index === activeSlide ? 'opacity-100' : 'pointer-events-none opacity-0'
+              index === activeSlide
+                ? "opacity-100"
+                : "pointer-events-none opacity-0"
             }`}
             aria-hidden={index !== activeSlide}
           >
             <img
               src={slide.src}
-              alt={index === activeSlide ? slide.alt : ''}
+              alt={index === activeSlide ? slide.alt : ""}
               className={`h-full w-full object-cover transition-transform duration-[7000ms] ease-out ${
-                index === activeSlide ? 'scale-[1.045]' : 'scale-100'
+                index === activeSlide ? "scale-[1.045]" : "scale-100"
               }`}
               style={{ objectPosition: slide.position }}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              fetchPriority={index === 0 ? 'high' : 'auto'}
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchPriority={index === 0 ? "high" : "auto"}
             />
           </div>
         ))}
@@ -113,12 +111,13 @@ export function Hero() {
           </div>
 
           <h1 className="max-w-4xl text-5xl font-medium leading-[0.96] tracking-[-0.055em] drop-shadow-[0_4px_30px_rgba(0,0,0,0.25)] sm:text-6xl lg:text-8xl">
-            Soluzioni che fanno la <span className="text-brand-orange">differenza.</span>
+            Soluzioni che fanno la{" "}
+            <span className="text-brand-orange">differenza.</span>
           </h1>
 
           <p className="mt-7 max-w-2xl text-base leading-7 text-white/78 sm:text-lg sm:leading-8">
-            Prodotti, servizi e consulenza per trasformare gli spazi dell’ospitalità in
-            esperienze riconoscibili, funzionali e su misura.
+            Prodotti, servizi e consulenza per trasformare gli spazi
+            dell’ospitalità in esperienze riconoscibili, funzionali e su misura.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -140,7 +139,13 @@ export function Hero() {
         <div className="relative hidden min-h-[430px] lg:block">
           <BrandComma className="absolute right-6 top-10 text-[24rem] leading-[0.55] opacity-80" />
           <div className="absolute bottom-16 right-0 max-w-[230px] border-l border-white/35 pl-6 text-xs uppercase leading-7 tracking-[0.18em] text-white/80">
-            Spazi<br />Persone<br />Esperienze<br />di valore
+            Spazi
+            <br />
+            Persone
+            <br />
+            Esperienze
+            <br />
+            di valore
           </div>
         </div>
       </Container>
@@ -157,7 +162,10 @@ export function Hero() {
           </div>
 
           <div className="flex items-center gap-4 sm:gap-6">
-            <div className="hidden items-center gap-2 sm:flex" aria-label="Seleziona immagine">
+            <div
+              className="hidden items-center gap-2 sm:flex"
+              aria-label="Seleziona immagine"
+            >
               {heroSlides.map((slide, index) => (
                 <button
                   key={slide.src}
@@ -165,19 +173,19 @@ export function Hero() {
                   onClick={() => setActiveSlide(index)}
                   className={`h-[3px] transition-all duration-300 ${
                     index === activeSlide
-                      ? 'w-10 bg-brand-orange'
-                      : 'w-5 bg-white/35 hover:bg-white/70'
+                      ? "w-10 bg-brand-orange"
+                      : "w-5 bg-white/35 hover:bg-white/70"
                   }`}
                   aria-label={`Vai alla slide ${index + 1}`}
-                  aria-current={index === activeSlide ? 'true' : undefined}
+                  aria-current={index === activeSlide ? "true" : undefined}
                 />
               ))}
             </div>
 
             <div className="flex items-center gap-2 border-l border-white/20 pl-4 sm:pl-6">
               <span className="mr-1 text-[10px] font-semibold tracking-[0.18em] text-white/55">
-                {String(activeSlide + 1).padStart(2, '0')} /{' '}
-                {String(heroSlides.length).padStart(2, '0')}
+                {String(activeSlide + 1).padStart(2, "0")} /{" "}
+                {String(heroSlides.length).padStart(2, "0")}
               </span>
               <button
                 type="button"
