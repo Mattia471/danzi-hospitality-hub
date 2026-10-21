@@ -10,7 +10,7 @@ import { PageSeo } from '../components/ui/PageSeo';
 export function HomePage() {
   return (
     <>
-      <PageSeo title="D'Anzi Hospitality Hub | Soluzioni per l'ospitalità" description="Prodotti, servizi e consulenza per hotel, spa, boutique hotel, B&B e ristoranti." />
+      <PageSeo title="D'Anzi Hospitality Hub | Soluzioni per l'ospitalità" description="Prodotti, servizi e consulenza per un’ospitalità di qualità, con soluzioni pensate su misura per ogni struttura." />
       <Hero />
       <Highlights />
       <PartnersPreview />

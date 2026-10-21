@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
 
-export function BrandLogo() {
+export function BrandLogo({ inverted = false }: { inverted?: boolean }) {
   return (
-    <Link to="/" aria-label="D'Anzi Hospitality Hub - Home" className="inline-flex flex-col leading-none">
-      <span className="text-[2rem] font-medium tracking-[-0.08em] text-brand-ink">
-        d<span className="text-brand-orange">’</span>anzi
-      </span>
-      <span className="mt-0.5 text-[9px] uppercase tracking-[0.16em] text-brand-muted">hospitality hub</span>
+    <Link to="/" aria-label="D'Anzi Hospitality Hub, torna alla Home" className="inline-flex shrink-0 items-center">
+      <img
+        src={inverted ? '/brand/logo-footer.png' : '/brand/logo-header.png'}
+        alt="D'Anzi Hospitality Hub"
+        className="h-[55px] w-[130px] object-contain sm:h-[65px] sm:w-[165px]"
+        width="165"
+        height="65"
+      />
     </Link>
   );
 }

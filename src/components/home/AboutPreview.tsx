@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { homeAboutImage } from '../../config/media';
 import { Link } from 'react-router-dom';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
@@ -10,7 +11,7 @@ export function AboutPreview() {
         <div>
           <SectionHeading
             eyebrow="Chi siamo"
-            title="Tradizione, esperienza, innovazione."
+            title="Tradizione familiare, visione contemporanea."
             description="Una storia familiare iniziata nel 1975 e cresciuta nel mondo dell’hospitality attraverso ricerca, passione e cura del dettaglio."
           />
           <Link
@@ -23,8 +24,8 @@ export function AboutPreview() {
 
         <div className="relative min-h-[500px] overflow-hidden bg-brand-ink">
           <img
-            src="/images/projects/axy/axy-lobby.webp"
-            alt="Interior hospitality Axy Hotels InnStyle"
+            src={homeAboutImage.src}
+            alt={homeAboutImage.alt}
             className="absolute inset-0 h-full w-full object-cover"
             loading="lazy"
           />
@@ -42,7 +43,7 @@ export function AboutPreview() {
                 <p className="mt-2 text-sm text-white/55">Roma, dal 1975</p>
               </div>
               <p className="hidden text-[9px] uppercase tracking-[0.16em] text-white/45 sm:block">
-                Axy Hotels InnStyle
+                {homeAboutImage.credit}
               </p>
             </div>
           </div>

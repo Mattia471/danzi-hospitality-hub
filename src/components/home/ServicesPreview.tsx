@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getCategorySlug } from '../../data/productCatalog';
 import { productCategories } from '../../data/services';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
@@ -30,8 +31,8 @@ export function ServicesPreview() {
           <div>
             <SectionHeading
               eyebrow="Prodotti e servizi"
-              title="Tutto per la tua ospitalità."
-              description="Dalle linee cortesia all’arredo, dal wellness alla sicurezza: un sistema di soluzioni per strutture ricettive e ristorazione."
+              title="Soluzioni per l’ospitalità."
+              description="Dalle linee cortesia all’arredo, dal wellness alla sicurezza: un sistema integrato di prodotti e servizi per hotel, strutture ricettive e ristorazione."
             />
             <Link
               to="/prodotti-e-servizi"
@@ -43,13 +44,14 @@ export function ServicesPreview() {
 
           <div className="grid sm:grid-cols-2 xl:grid-cols-3">
             {productCategories.map((category) => (
-              <div
+              <Link
                 key={category}
-                className="min-h-36 border border-black/5 bg-brand-canvas p-6"
+                to={`/prodotti-e-servizi/${getCategorySlug(category)}`}
+                className="group min-h-36 border border-black/5 bg-brand-canvas p-6 transition hover:border-brand-orange hover:bg-white"
               >
                 <div className="mb-8 h-0.5 w-8 bg-brand-orange" />
-                <p className="text-lg font-medium">{category}</p>
-              </div>
+                <p className="text-lg font-medium">{category} <ArrowRight className="ml-2 inline text-brand-orange transition-transform group-hover:translate-x-1" size={17} /></p>
+              </Link>
             ))}
           </div>
         </div>

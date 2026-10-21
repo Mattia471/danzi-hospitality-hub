@@ -14,4 +14,5 @@ export type Partner = {
   address?: string;
   location?: PartnerLocation;
   category?: string;
+  support?: { phone?: string; email?: string; url?: string };
 };

@@ -4,11 +4,11 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 import { PageSeo } from '../components/ui/PageSeo';
 
 const values = [
-  'Qualità di materiali e processi',
-  'Puntualità nelle consegne',
-  'Attenzione e ascolto del cliente',
-  'Personalizzazione di prodotti e servizi',
-  'Sostenibilità, con linee ecologiche e packaging green dove possibile',
+  'Qualità dei materiali e cura dei processi',
+  'Puntualità e affidabilità nelle consegne',
+  'Ascolto e attenzione alle esigenze del cliente',
+  'Prodotti e servizi personalizzati',
+  'Sostenibilità, attraverso soluzioni e packaging più attenti all’ambiente, dove possibile',
 ];
 
 const audiences = [
@@ -44,7 +44,7 @@ export function AboutPage() {
 
       <section className="py-20 lg:py-28">
         <Container className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr]">
-          <SectionHeading eyebrow="I valori" title="Qualità che si vede. Servizio che si sente." description="Un approccio costruito su ascolto, affidabilità, personalizzazione e attenzione alla sostenibilità." />
+          <SectionHeading eyebrow="I valori" title="Qualità che si vede. Servizio che si sente." description="Un approccio costruito sull’ascolto, sull’affidabilità e sulla capacità di trovare soluzioni personalizzate, con attenzione alla qualità e alla sostenibilità." />
           <div className="grid gap-4 sm:grid-cols-2">
             {values.map((value) => (
               <div key={value} className="flex gap-4 border border-black/5 bg-white p-5">
@@ -58,7 +58,7 @@ export function AboutPage() {
 
       <section className="bg-brand-stone py-20 lg:py-28">
         <Container>
-          <SectionHeading eyebrow="Clienti & referenze" title="Esperienza trasversale nel mondo hospitality." description="La presentazione aziendale indica una clientela che va dalle piccole strutture ricettive ai gruppi più grandi." />
+          <SectionHeading eyebrow="Clienti & referenze" title="Esperienza trasversale nel mondo hospitality." description="Affianchiamo strutture ricettive e operatori dell’ospitalità di diverse dimensioni, con soluzioni pensate per esigenze e progetti differenti." />
           <div className="mt-10 grid gap-px overflow-hidden border border-black/5 bg-black/5 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((audience) => <div key={audience} className="bg-white p-6 text-sm leading-6">{audience}</div>)}
           </div>

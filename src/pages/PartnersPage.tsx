@@ -17,14 +17,14 @@ export function PartnersPage() {
     <>
       <PageSeo
         title="Partner | D'Anzi Hospitality Hub"
-        description="Scopri i partner D'Anzi Hospitality Hub con mappa, contatti, sito web e indicazioni."
+        description="Scopri le aziende e i brand del network D'Anzi Hospitality Hub, con specializzazioni, mappa e indicazioni."
       />
       <section className="border-b border-black/5 bg-white py-16 lg:py-24">
         <Container>
           <SectionHeading
             eyebrow="Partner"
             title="Un network al servizio dell’ospitalità."
-            description="Qui raccoglieremo tutti i partner con posizione sulla mappa, contatti, sito web e accesso diretto alle indicazioni."
+            description="Una rete di aziende specializzate e brand selezionati, con cui sviluppiamo soluzioni dedicate a hotel, strutture ricettive e progetti contract."
           />
         </Container>
       </section>

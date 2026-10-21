@@ -8,8 +8,8 @@ export function Footer() {
   return (
     <footer className="bg-brand-ink text-white">
       <Container className="grid gap-10 py-12 md:grid-cols-[1.1fr_1fr_1fr] md:items-start">
-        <div className="[&_span]:!text-white">
-          <BrandLogo />
+        <div>
+          <BrandLogo inverted />
           <p className="mt-5 max-w-sm text-sm leading-6 text-white/65">{siteConfig.description}</p>
         </div>
 
@@ -32,6 +32,7 @@ export function Footer() {
           <p className="text-xs uppercase tracking-[0.2em] text-white/45">D’Anzi Hospitality Hub</p>
           <p className="mt-5 text-sm text-white/70">{siteConfig.tagline}</p>
           <p className="mt-7 text-xs text-white/40">© {new Date().getFullYear()} D’Anzi Hospitality Hub</p>
+          <p className="mt-3 text-xs text-white/40">Website by <a href="https://www.instagram.com/mattiacucuzza_/" target="_blank" rel="noopener noreferrer" className="underline decoration-white/30 underline-offset-4 transition hover:text-brand-orange">@mattiacucuzza_</a></p>
         </div>
       </Container>
     </footer>

@@ -16,10 +16,8 @@ export const partners: Partner[] = [
     name: "AMONN Hotel",
     category: "Linee cortesia",
     description:
-      "Linee cortesia raffinate e funzionali, con formulazioni delicate e packaging elegante.",
+      "Linee cortesia, cosmetica professionale, dispenser, complementi e accessori per hotel. Soluzioni personalizzabili per esprimere lo stile e l’identità di ogni struttura.",
     website: "https://www.amonnhotel.com/",
-    email: "commerciale@amonnhotel.com",
-    phone: "+39 045 6083311",
     address: "Via Altmann, 12, 39100 Bolzano BZ, Italia",
     location: {
       latitude: 46.4722174,
@@ -31,10 +29,8 @@ export const partners: Partner[] = [
     name: "BIMAR Arredo Contract",
     category: "Arredo contract",
     description:
-      "Soluzioni d’arredo funzionali e moderne per ambienti alberghieri e progetti contract su misura.",
+      "Soluzioni d’arredo e complementi per il settore hospitality e contract, pensate per coniugare funzionalità, comfort e design negli ambienti dell’ospitalità.",
     website: "https://www.bimararredocontract.it/",
-    email: "info@bimararredocontract.it",
-    phone: "+39 075 9889530",
     address: "Via della Fattoria, 37, 06084 Bettona PG, Italia",
     location: {
       latitude: 43.04056,
@@ -46,10 +42,8 @@ export const partners: Partner[] = [
     name: "Calligaris",
     category: "Arredo & design",
     description:
-      "Design italiano contemporaneo per arredi versatili, confortevoli e destinati anche al mondo contract.",
+      "Design italiano e arredi per ambienti contemporanei, con sedute e complementi pensati per progetti hospitality e contract.",
     website: "https://www.calligaris.com/it-IT/",
-    email: "eshop.italia@calligaris.com",
-    phone: "+39 0432 748211",
     address: "Via Trieste, 12, 33044 Manzano UD, Italia",
     location: {
       latitude: 45.98448,
@@ -58,13 +52,12 @@ export const partners: Partner[] = [
   },
   {
     id: "cisa",
+    support: { phone: "+39 0546 1880070", url: "https://cisa.com/it/contatti-per-professionisti/" },
     name: "CISA",
     category: "Sicurezza & accessi",
     description:
-      "Sistemi di sicurezza, chiusura e controllo degli accessi per il settore hotellerie.",
+      "Sistemi di chiusura, serrature elettroniche e soluzioni per il controllo degli accessi, pensati per migliorare sicurezza e gestione delle strutture ricettive.",
     website: "https://www.cisa.com/it/",
-    email: "cisa.vendite@allegion.com",
-    phone: "+39 0546 677111",
     address: "Via Oberdan, 42, 48018 Faenza RA, Italia",
     location: {
       latitude: 44.29159,
@@ -76,10 +69,8 @@ export const partners: Partner[] = [
     name: "Ki LIFE",
     category: "Wellness & SPA",
     description:
-      "Soluzioni ingegnerizzate per spa, saune e bagni turchi, con particolare attenzione a tecnologia e design.",
+      "Soluzioni dedicate al wellness e al benessere, per arricchire l’offerta di spa, centri benessere e strutture ricettive.",
     website: "https://www.kilife.it/",
-    email: "info@kilife.it",
-    phone: "+39 0721 496077",
     address: "Via Pantanelli, 159, 61025 Montelabbate PU, Italia",
     location: {
       latitude: 43.86871,
@@ -93,8 +84,6 @@ export const partners: Partner[] = [
     description:
       "Porcellane di lusso di tradizione veneziana, espressione di artigianalità, eleganza e cultura della tavola.",
     website: "https://www.geminianocozzi1765.com/",
-    email: "info@geminianocozzi1765.it",
-    phone: "+39 0422 1916600",
     address: "Via Sant’Antonino, 352/B, 31100 Treviso TV, Italia",
     location: {
       latitude: 45.64166,
@@ -108,8 +97,6 @@ export const partners: Partner[] = [
     description:
       "Posateria, pentolame e articoli per la tavola Made in Italy, pensati anche per hotellerie e ristorazione.",
     website: "https://www.mepra.it/",
-    email: "mepra@mepra.it",
-    phone: "+39 030 8921441",
     address: "Via Virgilio Montini, 176, 25067 Lumezzane BS, Italia",
     location: {
       latitude: 45.64992,
@@ -121,10 +108,8 @@ export const partners: Partner[] = [
     name: "Perdormire Hotel",
     category: "Bedding",
     description:
-      "Materassi, letti e sistemi di riposo progettati per offrire comfort e soluzioni dedicate al settore alberghiero.",
+      "Sistemi letto e soluzioni per il riposo dedicati all’hotellerie, per offrire comfort, qualità e cura del dettaglio in ogni camera.",
     website: "https://perdormirehotel.com/",
-    email: "info@perdormirehotel.com",
-    phone: "+39 0573 382781",
     address: "Via S. Pierino Casa al Vescovo, 51100 Pistoia PT, Italia",
     location: {
       latitude: 43.9094,
@@ -138,8 +123,6 @@ export const partners: Partner[] = [
     description:
       "Forniture per hotellerie e ristorazione, con porcellane e articoli per una tavola professionale e curata.",
     website: "https://www.radif.it/",
-    email: "eshop@radif.it",
-    phone: "+39 010 2485528",
     address: "Piazza Giacomo Matteotti, 3, 16123 Genova GE, Italia",
     location: {
       latitude: 44.40709,
@@ -147,14 +130,30 @@ export const partners: Partner[] = [
     },
   },
   {
+    id: "glt-urmet",
+    name: "GLT-URMET",
+    category: "Domotica & automazione",
+    description: "Soluzioni di domotica e automazione alberghiera per gestire accessi, comfort, impianti e servizi della camera, migliorando l’efficienza operativa e l’esperienza degli ospiti.",
+    website: "https://www.glt-controlloaccessi.it/",
+    address: "Via Bologna, 152, 10154 Torino TO, Italia",
+    support: { phone: "+39 011 2339111", email: "assistenza@glt.it", url: "https://www.glt-controlloaccessi.it/" },
+  },
+  {
+    id: "grattoni",
+    name: "GRATTONI",
+    category: "Arredo outdoor",
+    description: "Arredi outdoor per terrazze, giardini, piscine e aree relax, pensati per valorizzare gli spazi esterni di hotel e strutture ricettive.",
+    website: "https://grattonisedie.it/",
+    address: "Via Braide Matte, 7, 33048 San Giovanni al Natisone UD, Italia",
+  },
+  {
     id: "stark",
+    support: { phone: "+39 0522 653745", email: "assistenza@starksafes.com", url: "https://www.stark-horeca.com/it/assistenza" },
     name: "STARK",
     category: "Forniture alberghiere & sicurezza",
     description:
-      "Cassetteforti, frigobar e forniture professionali per hotel, strutture ricettive e mondo Ho.Re.Ca.",
+      "Forniture, attrezzature e accessori per hotel e strutture ricettive, con soluzioni funzionali per la camera, il bagno e i servizi agli ospiti.",
     website: "https://www.stark-horeca.com/it/",
-    email: "info@starksafes.com",
-    phone: "+39 0522 653745",
     address: "Strada Provinciale Nord, 36, 42017 Novellara RE, Italia",
     location: {
       latitude: 44.81013,

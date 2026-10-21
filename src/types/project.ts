@@ -6,5 +6,7 @@ export type Project = {
   gallery: string[];
   description: string;
   location?: string;
+  intervention?: string;
+  architect?: string;
   year?: string;
 };

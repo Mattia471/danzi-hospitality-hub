@@ -110,14 +110,13 @@ export function Hero() {
             </p>
           </div>
 
-          <h1 className="max-w-4xl text-5xl font-medium leading-[0.96] tracking-[-0.055em] drop-shadow-[0_4px_30px_rgba(0,0,0,0.25)] sm:text-6xl lg:text-8xl">
-            Soluzioni che fanno la{" "}
+          <h1 className="max-w-4xl text-4xl font-medium uppercase leading-[1.03] tracking-[-0.045em] drop-shadow-[0_4px_30px_rgba(0,0,0,0.25)] sm:text-5xl lg:text-[4.4rem] xl:text-[5.25rem]">
+            Soluzioni per un’ospitalità che fa la{" "}
             <span className="text-brand-orange">differenza.</span>
           </h1>
 
           <p className="mt-7 max-w-2xl text-base leading-7 text-white/78 sm:text-lg sm:leading-8">
-            Prodotti, servizi e consulenza per trasformare gli spazi
-            dell’ospitalità in esperienze riconoscibili, funzionali e su misura.
+            Prodotti, servizi e consulenza per un’ospitalità di qualità, con soluzioni pensate su misura per ogni struttura.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">

@@ -2,10 +2,10 @@ import { Gem, Leaf, PackageCheck, Users } from 'lucide-react';
 import { Container } from '../ui/Container';
 
 const highlights = [
-  { icon: Gem, title: 'Qualità', text: 'Ricerca di soluzioni curate nei materiali, nei processi e nei dettagli.' },
-  { icon: Users, title: 'Ascolto', text: 'Affiancamento e attenzione alle esigenze specifiche di ogni struttura.' },
-  { icon: PackageCheck, title: 'Su misura', text: 'Prodotti e servizi personalizzati per rafforzare identità e accoglienza.' },
-  { icon: Leaf, title: 'Sostenibilità', text: 'Attenzione a linee ecologiche e packaging green dove possibile.' },
+  { icon: Gem, title: 'Qualità', text: 'Soluzioni curate nei materiali, nelle finiture e in ogni dettaglio.' },
+  { icon: Users, title: 'Ascolto', text: 'Ascoltiamo le esigenze di ogni struttura per costruire soluzioni concrete e mirate.' },
+  { icon: PackageCheck, title: 'Su misura', text: 'Prodotti e servizi personalizzati per valorizzare identità, comfort e accoglienza.' },
+  { icon: Leaf, title: 'Sostenibilità', text: 'Selezioniamo, dove possibile, soluzioni e materiali attenti all’ambiente.' },
 ];
 
 export function Highlights() {

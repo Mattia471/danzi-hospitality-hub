@@ -30,5 +30,5 @@ export const productCategories = [
   'Sicurezza',
   'Tavola e porcellane',
   'Bedding',
-  'Frigobar e cassetteforti',
+  'Frigobar e casseforti',
 ];

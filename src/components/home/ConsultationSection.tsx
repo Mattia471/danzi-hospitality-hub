@@ -57,7 +57,20 @@ export function ConsultationSection() {
 
     if (!endpoint) {
       setStatus('error');
-      setFeedback('Il modulo è pronto, ma manca ancora la configurazione del servizio di invio email.');
+      const subject = `Richiesta di consulenza - ${form.name}`;
+      const body = [
+        `Nome: ${form.name}`,
+        `Struttura: ${form.company || 'Non indicata'}`,
+        `Email: ${form.email}`,
+        `Telefono: ${form.phone || 'Non indicato'}`,
+        `Argomento: ${form.topic}`,
+        '',
+        form.message,
+      ].join('\n');
+      const mailto = `mailto:${siteConfig.contacts.primaryEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+      setStatus('idle');
+      setFeedback('Si aprirà la tua app di posta con la richiesta già compilata. Premi Invia per completare l’operazione. Se non si apre, scrivici all’indirizzo indicato a sinistra.');
       return;
     }
 
@@ -107,7 +120,7 @@ export function ConsultationSection() {
             Parliamo del tuo prossimo progetto.
           </h2>
           <p className="mt-6 max-w-lg text-base leading-7 text-white/65">
-            Raccontaci la tua struttura, le tue esigenze o il progetto che hai in mente. D’Anzi Hospitality Hub ti ricontatterà per valutare insieme la soluzione più adatta.
+            Raccontaci la tua struttura, le tue esigenze o il progetto che hai in mente. Ti affiancheremo nella ricerca delle soluzioni più adatte, dalla scelta dei prodotti alla realizzazione.
           </p>
 
           <div className="mt-10 space-y-5 border-t border-white/10 pt-8 text-sm text-white/70">
@@ -115,9 +128,9 @@ export function ConsultationSection() {
               <Mail size={17} className="text-brand-orange" />
               {siteConfig.contacts.primaryEmail}
             </a>
-            <a className="flex items-center gap-3 transition hover:text-white" href={`tel:${siteConfig.contacts.directPhone.replace(/\s/g, '')}`}>
+            <a className="flex items-center gap-3 transition hover:text-white" href={`tel:${siteConfig.contacts.primaryPhone.replace(/\s/g, '')}`}>
               <Phone size={17} className="text-brand-orange" />
-              {siteConfig.contacts.directPhone}
+              {siteConfig.contacts.primaryPhone}
             </a>
             <div className="flex items-start gap-3">
               <MapPin size={17} className="mt-0.5 shrink-0 text-brand-orange" />
@@ -262,7 +275,7 @@ export function ConsultationSection() {
               className={`mt-6 flex items-start gap-3 border px-4 py-3 text-sm leading-6 ${
                 status === 'success'
                   ? 'border-green-700/20 bg-green-700/5 text-green-800'
-                  : 'border-red-700/20 bg-red-700/5 text-red-800'
+                  : status === 'idle' ? 'border-brand-orange/30 bg-brand-orange/5 text-brand-ink' : 'border-red-700/20 bg-red-700/5 text-red-800'
               }`}
               role="status"
               aria-live="polite"

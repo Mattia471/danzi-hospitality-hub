@@ -63,6 +63,13 @@ export function ProjectsPage() {
                   <h2 className="mt-3 text-4xl font-medium leading-none tracking-[-0.045em] text-brand-ink sm:text-5xl">
                     {project.title}
                   </h2>
+                  {(project.location || project.intervention || project.architect) && (
+                    <dl className="mt-6 space-y-2 border-y border-black/10 py-4 text-sm">
+                      {project.location && <div className="flex justify-between gap-3"><dt className="text-brand-muted">Località</dt><dd className="text-right">{project.location}</dd></div>}
+                      {project.intervention && <div className="flex justify-between gap-3"><dt className="text-brand-muted">Intervento</dt><dd className="text-right">{project.intervention}</dd></div>}
+                      {project.architect && <div className="flex justify-between gap-3"><dt className="text-brand-muted">Architetto</dt><dd className="text-right">{project.architect}</dd></div>}
+                    </dl>
+                  )}
                   <p className="mt-6 max-w-md text-sm leading-7 text-brand-muted">
                     {project.description}
                   </p>
