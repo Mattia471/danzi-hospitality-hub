@@ -9,10 +9,8 @@ export type Partner = {
   description: string;
   logo?: string;
   website?: string;
-  email?: string;
-  phone?: string;
   address?: string;
   location?: PartnerLocation;
   category?: string;
-  support?: { phone?: string; email?: string; url?: string };
+  support?: { phone?: string; url?: string; instructions?: string; actionLabel?: string };
 };

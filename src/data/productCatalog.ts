@@ -47,7 +47,7 @@ export const catalogCategories: CatalogCategory[] = [
   {
     slug: 'tavola-e-porcellane', name: 'Tavola e porcellane', subtitle: 'L’identità passa anche dalla tavola.',
     description: 'Porcellane, posateria e complementi selezionati per il servizio di ristorazione e l’esperienza dining.',
-    partnerIds: ['geminiano-cozzi', 'mepra', 'radif'], products: [],
+    partnerIds: [], products: [],
   },
   {
     slug: 'bedding', name: 'Bedding', subtitle: 'Il comfort si sente.',

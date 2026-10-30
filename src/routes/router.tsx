@@ -7,6 +7,7 @@ import { PartnersPage } from '../pages/PartnersPage';
 import { ProjectsPage } from '../pages/ProjectsPage';
 import { ServicesPage } from '../pages/ServicesPage';
 import { CategoryPage } from '../pages/CategoryPage';
+import { PartnerCatalogPage } from '../pages/PartnerCatalogPage';
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
     children: [
       { path: '/', element: <HomePage /> },
       { path: '/partner', element: <PartnersPage /> },
+      { path: '/partner/:partnerId/cataloghi/:catalogId', element: <PartnerCatalogPage /> },
       { path: '/chi-siamo', element: <AboutPage /> },
       { path: '/realizzazioni', element: <ProjectsPage /> },
       { path: '/prodotti-e-servizi', element: <ServicesPage /> },

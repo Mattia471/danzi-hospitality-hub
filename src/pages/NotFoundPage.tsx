@@ -5,7 +5,7 @@ import { PageSeo } from '../components/ui/PageSeo';
 export function NotFoundPage() {
   return (
     <>
-      <PageSeo title="Pagina non trovata | D'Anzi Hospitality Hub" description="La pagina richiesta non è disponibile." />
+      <PageSeo title="Pagina non trovata | D'Anzi Hospitality Hub" description="La pagina richiesta non è disponibile." noIndex />
     <section className="grid min-h-[65vh] place-items-center py-20">
       <Container className="text-center">
         <p className="text-xs uppercase tracking-[0.2em] text-brand-orange">404</p>
