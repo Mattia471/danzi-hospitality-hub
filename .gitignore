@@ -1,10 +1,24 @@
-node_modules
-dist
+# Dependencies / build
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.eslintcache
+*.log
+
+# Local / CI / deployment
 .DS_Store
-*.local
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.vercel/
+.cache/
+
+# Environment: keep examples, never commit real values
 .env
 .env.*
 !.env.example
-.vscode/*
-!.vscode/extensions.json
-.idea
+!.env.production.example
+
+# OS / editor
+Thumbs.db

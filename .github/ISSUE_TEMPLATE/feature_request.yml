@@ -1,0 +1,24 @@
+name: Richiesta di modifica
+description: Proponi un miglioramento per UI, contenuti o funzionalità.
+title: "feat: "
+labels: []
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Obiettivo
+      description: Quale esigenza risolve questa modifica?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposta
+      description: Descrivi il risultato desiderato.
+    validations:
+      required: true
+  - type: textarea
+    id: assets
+    attributes:
+      label: Materiali o dipendenze
+      description: Indica eventuali materiali, dati o approvazioni necessari, senza allegare contenuti riservati.

@@ -1,0 +1,39 @@
+name: Bug report
+description: Segnala un comportamento errato, senza dati personali o segreti.
+title: "fix: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: "Non inserire credenziali, dati dei clienti o link a documenti privati."
+  - type: input
+    id: page
+    attributes:
+      label: Pagina / percorso
+      placeholder: "/partner"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passaggi per riprodurre
+      placeholder: "1. Aprire ... 2. Cliccare ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Risultato atteso
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Risultato ottenuto
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser e dispositivo
+      placeholder: "Chrome / iPhone / Android / Desktop"
