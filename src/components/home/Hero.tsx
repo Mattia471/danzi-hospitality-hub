@@ -62,149 +62,151 @@ export function Hero() {
   };
 
   return (
-    <section
-      className="relative isolate min-h-[76vh] overflow-hidden bg-brand-ink text-white lg:min-h-[82vh]"
+    <section className="bg-white px-2 pb-3 pt-2 sm:px-4 sm:pb-5 sm:pt-4">
+      <div
+        className="relative isolate min-h-[76svh] overflow-hidden rounded-[1.55rem] bg-brand-ink text-white sm:min-h-[78vh] sm:rounded-[2.6rem] lg:min-h-[82vh]"
       onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      aria-roledescription="carousel"
-      aria-label="Realizzazioni hospitality e interior design"
-    >
-      <div className="absolute inset-0">
-        {heroSlides.map((slide, index) => (
-          <div
-            key={slide.src}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
-              index === activeSlide
-                ? "opacity-100"
-                : "pointer-events-none opacity-0"
-            }`}
-            aria-hidden={index !== activeSlide}
-          >
-            <img
-              src={slide.src}
-              alt={index === activeSlide ? slide.alt : ""}
-              className={`h-full w-full object-cover transition-transform duration-[7000ms] ease-out ${
-                index === activeSlide ? "scale-[1.045]" : "scale-100"
-              }`}
-              style={{ objectPosition: slide.position }}
-              loading={index === 0 ? "eager" : "lazy"}
-              fetchPriority={index === 0 ? "high" : "auto"}
-            />
-          </div>
-        ))}
-      </div>
-
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,29,33,0.92)_0%,rgba(23,29,33,0.75)_38%,rgba(23,29,33,0.28)_70%,rgba(23,29,33,0.16)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.14)_0%,transparent_45%,rgba(0,0,0,0.62)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_34%,rgba(255,90,0,0.13),transparent_25%)]" />
-
-      <Container className="relative z-10 grid min-h-[76vh] items-center gap-10 py-20 lg:min-h-[82vh] lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
-        <div className="max-w-4xl">
-          <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-            <p className="text-xs uppercase tracking-[0.26em] text-white/70">
-              D’Anzi Hospitality Hub
-            </p>
-            <span className="hidden h-px w-10 bg-brand-orange sm:block" />
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-orange sm:text-xs">
-              Interior · Contract · Hospitality
-            </p>
-          </div>
-
-          <h1 className="max-w-4xl text-4xl font-medium uppercase leading-[1.03] tracking-[-0.045em] drop-shadow-[0_4px_30px_rgba(0,0,0,0.25)] sm:text-5xl lg:text-[4.4rem] xl:text-[5.25rem]">
-            Soluzioni per un’ospitalità che fa la{" "}
-            <span className="text-brand-orange">differenza.</span>
-          </h1>
-
-          <p className="mt-7 max-w-2xl text-base leading-7 text-white/78 sm:text-lg sm:leading-8">
-            Prodotti, servizi e consulenza per un’ospitalità di qualità, con soluzioni pensate su misura per ogni struttura.
-          </p>
-
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Link
-              to="/prodotti-e-servizi"
-              className="inline-flex items-center gap-3 bg-brand-orange px-6 py-4 text-xs font-semibold uppercase tracking-[0.13em] transition hover:bg-brand-orange-dark"
-            >
-              Scopri di più <ArrowRight size={16} />
-            </Link>
-            <Link
-              to="/realizzazioni"
-              className="inline-flex items-center gap-3 border border-white/35 bg-black/10 px-6 py-4 text-xs font-semibold uppercase tracking-[0.13em] backdrop-blur-sm transition hover:bg-white hover:text-brand-ink"
-            >
-              Guarda le realizzazioni
-            </Link>
-          </div>
-        </div>
-
-        <div className="relative hidden min-h-[430px] lg:block">
-          <BrandComma className="absolute right-6 top-10 text-[24rem] leading-[0.55] opacity-80" />
-          <div className="absolute bottom-16 right-0 max-w-[230px] border-l border-white/35 pl-6 text-xs uppercase leading-7 tracking-[0.18em] text-white/80">
-            Spazi
-            <br />
-            Persone
-            <br />
-            Esperienze
-            <br />
-            di valore
-          </div>
-        </div>
-      </Container>
-
-      <div className="absolute inset-x-0 bottom-0 z-20 border-t border-white/15 bg-black/15 backdrop-blur-[2px]">
-        <Container className="flex min-h-20 items-center justify-between gap-5 py-4">
-          <div className="min-w-0">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/45">
-              Realizzazione in evidenza
-            </p>
-            <p className="mt-1 truncate text-xs font-semibold uppercase tracking-[0.16em] text-white/90 sm:text-sm">
-              {heroSlides[activeSlide].label}
-            </p>
-          </div>
-
-          <div className="flex items-center gap-4 sm:gap-6">
+        onMouseLeave={() => setIsPaused(false)}
+        aria-roledescription="carousel"
+        aria-label="Realizzazioni hospitality e interior design"
+      >
+        <div className="absolute inset-0">
+          {heroSlides.map((slide, index) => (
             <div
-              className="hidden items-center gap-2 sm:flex"
-              aria-label="Seleziona immagine"
+              key={slide.src}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
+                index === activeSlide
+                  ? "opacity-100"
+                  : "pointer-events-none opacity-0"
+              }`}
+              aria-hidden={index !== activeSlide}
             >
-              {heroSlides.map((slide, index) => (
-                <button
-                  key={slide.src}
-                  type="button"
-                  onClick={() => setActiveSlide(index)}
-                  className={`h-[3px] transition-all duration-300 ${
-                    index === activeSlide
-                      ? "w-10 bg-brand-orange"
-                      : "w-5 bg-white/35 hover:bg-white/70"
-                  }`}
-                  aria-label={`Vai alla slide ${index + 1}`}
-                  aria-current={index === activeSlide ? "true" : undefined}
-                />
-              ))}
+              <img
+                src={slide.src}
+                alt={index === activeSlide ? slide.alt : ""}
+                className={`h-full w-full object-cover transition-transform duration-[7000ms] ease-out ${
+                  index === activeSlide ? "scale-[1.045]" : "scale-100"
+                }`}
+                style={{ objectPosition: slide.position }}
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "auto"}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,29,33,0.92)_0%,rgba(23,29,33,0.75)_38%,rgba(23,29,33,0.28)_70%,rgba(23,29,33,0.16)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.14)_0%,transparent_45%,rgba(0,0,0,0.62)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_34%,rgba(255,90,0,0.13),transparent_25%)]" />
+
+        <Container className="relative z-10 grid min-h-[76svh] items-center gap-10 py-20 sm:min-h-[78vh] lg:min-h-[82vh] lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
+          <div className="max-w-4xl">
+            <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-2">
+              <p className="text-xs uppercase tracking-[0.26em] text-white/70">
+                D’Anzi Hospitality Hub
+              </p>
+              <span className="hidden h-px w-10 bg-brand-orange sm:block" />
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-orange sm:text-xs">
+                Interior · Contract · Hospitality
+              </p>
             </div>
 
-            <div className="flex items-center gap-2 border-l border-white/20 pl-4 sm:pl-6">
-              <span className="mr-1 text-[10px] font-semibold tracking-[0.18em] text-white/55">
-                {String(activeSlide + 1).padStart(2, "0")} /{" "}
-                {String(heroSlides.length).padStart(2, "0")}
-              </span>
-              <button
-                type="button"
-                onClick={previousSlide}
-                className="grid h-10 w-10 place-items-center border border-white/25 bg-black/10 transition hover:border-brand-orange hover:bg-brand-orange hover:text-white"
-                aria-label="Immagine precedente"
+            <h1 className="max-w-4xl text-[2.025rem] font-medium uppercase leading-[1.03] tracking-[-0.045em] drop-shadow-[0_4px_30px_rgba(0,0,0,0.25)] sm:text-[2.7rem] lg:text-[3.96rem] xl:text-[4.725rem]">
+              Soluzioni per un’ospitalità che fa la{" "}
+              <span className="text-brand-orange">differenza.</span>
+            </h1>
+
+            <p className="mt-7 max-w-2xl text-base leading-7 text-white/78 sm:text-lg sm:leading-8">
+              Prodotti, servizi e consulenza per un’ospitalità di qualità, con soluzioni pensate su misura per ogni struttura.
+            </p>
+
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link
+                to="/prodotti-e-servizi"
+                className="inline-flex items-center gap-3 bg-brand-orange px-6 py-4 text-xs font-semibold uppercase tracking-[0.13em] transition hover:bg-brand-orange-dark"
               >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                type="button"
-                onClick={nextSlide}
-                className="grid h-10 w-10 place-items-center border border-white/25 bg-black/10 transition hover:border-brand-orange hover:bg-brand-orange hover:text-white"
-                aria-label="Immagine successiva"
+                Scopri di più <ArrowRight size={16} />
+              </Link>
+              <Link
+                to="/realizzazioni"
+                className="inline-flex items-center gap-3 border border-white/35 bg-black/10 px-6 py-4 text-xs font-semibold uppercase tracking-[0.13em] backdrop-blur-sm transition hover:bg-white hover:text-brand-ink"
               >
-                <ChevronRight size={18} />
-              </button>
+                Guarda le realizzazioni
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative hidden min-h-[430px] lg:block">
+            <BrandComma className="absolute right-6 top-10 text-[24rem] leading-[0.55] opacity-80" />
+            <div className="absolute bottom-16 right-0 max-w-[230px] border-l border-white/35 pl-6 text-xs uppercase leading-7 tracking-[0.18em] text-white/80">
+              Spazi
+              <br />
+              Persone
+              <br />
+              Esperienze
+              <br />
+              di valore
             </div>
           </div>
         </Container>
+
+        <div className="absolute inset-x-0 bottom-0 z-20 border-t border-white/15 bg-black/15 backdrop-blur-[2px]">
+          <Container className="flex min-h-20 items-center justify-between gap-5 py-4">
+            <div className="min-w-0">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/45">
+                Realizzazione in evidenza
+              </p>
+              <p className="mt-1 truncate text-xs font-semibold uppercase tracking-[0.16em] text-white/90 sm:text-sm">
+                {heroSlides[activeSlide].label}
+              </p>
+            </div>
+
+            <div className="flex items-center gap-4 sm:gap-6">
+              <div
+                className="hidden items-center gap-2 sm:flex"
+                aria-label="Seleziona immagine"
+              >
+                {heroSlides.map((slide, index) => (
+                  <button
+                    key={slide.src}
+                    type="button"
+                    onClick={() => setActiveSlide(index)}
+                    className={`h-[3px] transition-all duration-300 ${
+                      index === activeSlide
+                        ? "w-10 bg-brand-orange"
+                        : "w-5 bg-white/35 hover:bg-white/70"
+                    }`}
+                    aria-label={`Vai alla slide ${index + 1}`}
+                    aria-current={index === activeSlide ? "true" : undefined}
+                  />
+                ))}
+              </div>
+
+              <div className="flex items-center gap-2 border-l border-white/20 pl-4 sm:pl-6">
+                <span className="mr-1 text-[10px] font-semibold tracking-[0.18em] text-white/55">
+                  {String(activeSlide + 1).padStart(2, "0")} /{" "}
+                  {String(heroSlides.length).padStart(2, "0")}
+                </span>
+                <button
+                  type="button"
+                  onClick={previousSlide}
+                  className="grid h-10 w-10 place-items-center border border-white/25 bg-black/10 transition hover:border-brand-orange hover:bg-brand-orange hover:text-white"
+                  aria-label="Immagine precedente"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+                <button
+                  type="button"
+                  onClick={nextSlide}
+                  className="grid h-10 w-10 place-items-center border border-white/25 bg-black/10 transition hover:border-brand-orange hover:bg-brand-orange hover:text-white"
+                  aria-label="Immagine successiva"
+                >
+                  <ChevronRight size={18} />
+                </button>
+              </div>
+            </div>
+          </Container>
+        </div>
       </div>
     </section>
   );
