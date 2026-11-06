@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { BrandComma } from "../ui/BrandComma";
 import { Container } from "../ui/Container";
@@ -8,65 +8,50 @@ const heroSlides = [
   {
     src: "/images/projects/axy/axy-lobby.webp",
     alt: "Axy Hotels InnStyle, lounge e spazi comuni di interior design",
-    label: "Axy Hotels InnStyle · Hotel Interior",
+
     position: "center",
   },
   {
     src: "/images/projects/residenza-piranesi/piranesi-lounge.webp",
     alt: "Residenza Piranesi, camera e area lounge dal design contemporaneo",
-    label: "Residenza Piranesi · Rooms & Hospitality",
+
     position: "center",
   },
   {
     src: "/images/projects/adesso/adesso-bar.webp",
     alt: "ADESSO, area bar e ristorazione con illuminazione scenografica",
-    label: "ADESSO · Food & Beverage",
+
     position: "center",
   },
   {
     src: "/images/projects/hotel-independent/independent-room.webp",
     alt: "Hotel Independent, camera con palette blu e bordeaux",
-    label: "Hotel Independent · Interior",
+
     position: "center",
   },
   {
     src: "/images/projects/eitch/eitch-wellness.webp",
     alt: "EITCH, bagno wellness in pietra con vasca e illuminazione integrata",
-    label: "EITCH · Suite & Wellness",
+
     position: "center",
   },
 ] as const;
 
 export function Hero() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    if (isPaused) return;
-
     const interval = window.setInterval(() => {
       setActiveSlide((current) => (current + 1) % heroSlides.length);
     }, 5200);
 
     return () => window.clearInterval(interval);
-  }, [isPaused]);
-
-  const previousSlide = () => {
-    setActiveSlide(
-      (current) => (current - 1 + heroSlides.length) % heroSlides.length,
-    );
-  };
-
-  const nextSlide = () => {
-    setActiveSlide((current) => (current + 1) % heroSlides.length);
-  };
+  }, []);
 
   return (
     <section className="bg-white px-2 pb-3 pt-2 sm:px-4 sm:pb-5 sm:pt-4">
       <div
         className="relative isolate min-h-[76svh] overflow-hidden rounded-[1.55rem] bg-brand-ink text-white sm:min-h-[78vh] sm:rounded-[2.6rem] lg:min-h-[82vh]"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
         aria-roledescription="carousel"
         aria-label="Realizzazioni hospitality e interior design"
       >
@@ -150,63 +135,7 @@ export function Hero() {
           </div>
         </Container>
 
-        <div className="absolute inset-x-0 bottom-0 z-20 border-t border-white/15 bg-black/15 backdrop-blur-[2px]">
-          <Container className="flex min-h-20 items-center justify-between gap-5 py-4">
-            <div className="min-w-0">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/45">
-                Realizzazione in evidenza
-              </p>
-              <p className="mt-1 truncate text-xs font-semibold uppercase tracking-[0.16em] text-white/90 sm:text-sm">
-                {heroSlides[activeSlide].label}
-              </p>
-            </div>
 
-            <div className="flex items-center gap-4 sm:gap-6">
-              <div
-                className="hidden items-center gap-2 sm:flex"
-                aria-label="Seleziona immagine"
-              >
-                {heroSlides.map((slide, index) => (
-                  <button
-                    key={slide.src}
-                    type="button"
-                    onClick={() => setActiveSlide(index)}
-                    className={`h-[3px] transition-all duration-300 ${
-                      index === activeSlide
-                        ? "w-10 bg-brand-orange"
-                        : "w-5 bg-white/35 hover:bg-white/70"
-                    }`}
-                    aria-label={`Vai alla slide ${index + 1}`}
-                    aria-current={index === activeSlide ? "true" : undefined}
-                  />
-                ))}
-              </div>
-
-              <div className="flex items-center gap-2 border-l border-white/20 pl-4 sm:pl-6">
-                <span className="mr-1 text-[10px] font-semibold tracking-[0.18em] text-white/55">
-                  {String(activeSlide + 1).padStart(2, "0")} /{" "}
-                  {String(heroSlides.length).padStart(2, "0")}
-                </span>
-                <button
-                  type="button"
-                  onClick={previousSlide}
-                  className="grid h-10 w-10 place-items-center border border-white/25 bg-black/10 transition hover:border-brand-orange hover:bg-brand-orange hover:text-white"
-                  aria-label="Immagine precedente"
-                >
-                  <ChevronLeft size={18} />
-                </button>
-                <button
-                  type="button"
-                  onClick={nextSlide}
-                  className="grid h-10 w-10 place-items-center border border-white/25 bg-black/10 transition hover:border-brand-orange hover:bg-brand-orange hover:text-white"
-                  aria-label="Immagine successiva"
-                >
-                  <ChevronRight size={18} />
-                </button>
-              </div>
-            </div>
-          </Container>
-        </div>
       </div>
     </section>
   );
