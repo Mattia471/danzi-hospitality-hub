@@ -65,7 +65,7 @@ export function Hero() {
     <section className="bg-white px-2 pb-3 pt-2 sm:px-4 sm:pb-5 sm:pt-4">
       <div
         className="relative isolate min-h-[76svh] overflow-hidden rounded-[1.55rem] bg-brand-ink text-white sm:min-h-[78vh] sm:rounded-[2.6rem] lg:min-h-[82vh]"
-      onMouseEnter={() => setIsPaused(true)}
+        onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         aria-roledescription="carousel"
         aria-label="Realizzazioni hospitality e interior design"
